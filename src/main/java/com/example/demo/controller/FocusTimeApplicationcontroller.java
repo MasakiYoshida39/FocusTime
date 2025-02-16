@@ -23,9 +23,9 @@ public class FocusTimeApplicationcontroller {
 		
 		public String FocusTimemodel(Model model) {
 			//bodyweight=体重
-			model.addAttribute("bodyweight", "7999");
+			model.addAttribute("bodyweight", "799");
 			//Content=科目
-			model.addAttribute("Content", "科目");
+			model.addAttribute("Content", "理科");
 			return "test";
 		}
 		
