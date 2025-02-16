@@ -1,10 +1,11 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.form.TestForm;
 /**
  * 
  * @author masaki
@@ -24,10 +25,30 @@ public class FocusTimeApplicationcontroller {
 		}
 		
 		
+		
+		
 		/**
 		 * 
 		 * @return test.html
 		 */
+		/*--- 内容登録リクエスト（登録画面より） ---*/
+		@PostMapping("/regist-review")
+		
+		public String registReview(@ModelAttribute TestForm form) {
+				//tostringが呼び出される
+			System.out.println(form);		
+			return "test";
+		}
+		/**
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
 		// /post-paramのポストからリクエストを受け取る
 		@PostMapping("/post-param")
 		//content=科目
@@ -39,24 +60,6 @@ public class FocusTimeApplicationcontroller {
 		}
 	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	/**
 	    //modelのやり方
 		@GetMapping("/FocusTime")
 		//public Stringは変えられない
@@ -68,10 +71,10 @@ public class FocusTimeApplicationcontroller {
 			model.addAttribute("Content", "理科");
 			return "test";
 		}
-	*/
+	
 		
 		
-		/**
+		
 		//ModelAndViewのやり方
 		@GetMapping("/FocusTime-mv")
 		
