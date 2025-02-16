@@ -8,15 +8,39 @@
 
 </head>
 <body>
+		
+	<h2>習得パラメータ</h2>
 
 
-	<h2>取得したパラメータの表示</h2>
+<!--   	【利用者ID】<br>-->
+<!--   	<p th:text="${TesttForm.userId}"></p><br><br>-->
+<!--   	【勉強日】<br>-->
+<!--   	<p th:text="${TesttForm.study}"></p><br><br>-->
+<!--   	【勉強時間】(1-5)<br>-->
+<!--   	<p th:text="${TesttForm.studyhours}"></p><br><br>-->
+<!--   	【教科】<br>-->
+<!--   	<p th:text="${TesttForm.studyhours}"></p><br><br>-->
+<!--   	【内容】<br>-->
+<!--   	<p th:text="${TesttForm.comment}"></p><br><br>-->
 
-	<p th:text="${mGreeting}">項目表示</p>
+	<div th:object="${TestForm}">
+		<!--   	【利用者ID】<br>-->
+	   <!--  	<p th:text="*{userId}"></p><br><br>-->
+	   	【勉強日】<br>
+	   	<p th:text="*{study}"></p><br><br>
+	   	【勉強時間】<br>
+	   	<p th:text="*{studyhours}"></p><br><br>
+	   	【教科】(1-5)<br>
+	   	<p th:text="*{study}"></p><br><br>
+	   	【内容】<br>
+	   	<p th:text="*{comment}"></p><br><br>
+	   	
+	   	
+	  
+	</div>
 
-	<a th:href="@{/input}">入力画面へ</a>
-
-	
+	<br>
+	<a th:href="@{/input}">入力画面に戻る</a>
 
 </body>
 </html>
