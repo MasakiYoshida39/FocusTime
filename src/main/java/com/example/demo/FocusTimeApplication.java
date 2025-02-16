@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class motoApplication {
+public class FocusTimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(motoApplication.class, args);
+		SpringApplication.run(FocusTimeApplication.class, args);
 	}
 
 }
