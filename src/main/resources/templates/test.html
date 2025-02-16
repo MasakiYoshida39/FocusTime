@@ -13,25 +13,26 @@
 
 
 <!--   	【利用者ID】<br>-->
-<!--   	<p th:text="${TesttForm.userId}"></p><br><br>-->
+<!--   	<p th:text="${TestForm.userId}"></p><br><br>-->
 <!--   	【勉強日】<br>-->
-<!--   	<p th:text="${TesttForm.study}"></p><br><br>-->
+<!--   	<p th:text="${TestForm.study}"></p><br><br>-->
 <!--   	【勉強時間】(1-5)<br>-->
-<!--   	<p th:text="${TesttForm.studyhours}"></p><br><br>-->
+<!--   	<p th:text="${TestForm.studyhours}"></p><br><br>-->
 <!--   	【教科】<br>-->
-<!--   	<p th:text="${TesttForm.studyhours}"></p><br><br>-->
+<!--   	<p th:text="${TestForm.studyhours}"></p><br><br>-->
 <!--   	【内容】<br>-->
-<!--   	<p th:text="${TesttForm.comment}"></p><br><br>-->
+<!--   	<p th:text="${TestForm.comment}"></p><br><br>-->
 
-	<div th:object="${TestForm}">
+<!--   	testは小文字-->
+	<div th:object="${testForm}">
 		<!--   	【利用者ID】<br>-->
 	   <!--  	<p th:text="*{userId}"></p><br><br>-->
-	   	【勉強日】<br>
+	   【勉強日】<br>
 	   	<p th:text="*{study}"></p><br><br>
 	   	【勉強時間】<br>
 	   	<p th:text="*{studyhours}"></p><br><br>
 	   	【教科】(1-5)<br>
-	   	<p th:text="*{study}"></p><br><br>
+	   	<p th:text="*{subject}"></p><br><br>
 	   	【内容】<br>
 	   	<p th:text="*{comment}"></p><br><br>
 	   	

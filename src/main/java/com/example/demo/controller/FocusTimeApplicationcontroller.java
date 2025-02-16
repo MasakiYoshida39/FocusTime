@@ -32,11 +32,12 @@ public class FocusTimeApplicationcontroller {
 		 * @return test.html
 		 */
 		/*--- 内容登録リクエスト（登録画面より） ---*/
-		@PostMapping("/regist-review")
+		@PostMapping("/n")
 		
 		public String registReview(@ModelAttribute TestForm form) {
 				//tostringが呼び出される
-			System.out.println(form);		
+			System.out.println(form);	
+			
 			return "test";
 		}
 		/**
