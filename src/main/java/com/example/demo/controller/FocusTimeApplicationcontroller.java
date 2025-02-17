@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,10 +24,7 @@ public class FocusTimeApplicationcontroller {
 		public String input() {
 			return "input";
 		}
-		
-		
-		
-		
+	
 		/**
 		 * 
 		 * @return test.html
@@ -40,16 +38,27 @@ public class FocusTimeApplicationcontroller {
 			
 			return "test";
 		}
+		
+		/*--- レビュー登録画面表示リクエスト（確認画面からの戻り） ---*/
+		@PostMapping("/n-ret")
+		public String showReviewFormRet(@ModelAttribute TestForm form) {
+			return "regist-review";
+		}
+		
+		/*--- レビュー登録リクエスト（登録確認画面より） ---*/
+		@PostMapping("/test")
+		public String confirmRegistReview(TestForm form,
+				Model model) {
+			//
+			// *** ここで from 内容で DB登録処理を行う ***
+			//
+
+			model.addAttribute("msg", "登録が完了しました。");
+			
+			return "complete";
+		}
 		/**
 		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		
 		// /post-paramのポストからリクエストを受け取る
 		@PostMapping("/post-param")
 		//content=科目
