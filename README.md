@@ -22,3 +22,14 @@ FocusTime
 - **GitHub**: 
 - **Twitter**:
 
+
+## メモ
+データベース名
+勉強日
+Date型 study;
+勉強時間
+Integer型 studyhours;
+教科
+String型 subject;
+内容
+String型 comment;
