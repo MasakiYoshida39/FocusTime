@@ -31,7 +31,6 @@ public class FocusTimeApplicationcontroller {
 		 */
 		/*--- 内容登録リクエスト（登録画面より） ---*/
 		@PostMapping("/n")
-		
 		public String registReview(@ModelAttribute TestForm form) {
 				//tostringが呼び出される
 			System.out.println(form);	
@@ -42,7 +41,7 @@ public class FocusTimeApplicationcontroller {
 		/*--- レビュー登録画面表示リクエスト（確認画面からの戻り） ---*/
 		@PostMapping("/n-ret")
 		public String showReviewFormRet(@ModelAttribute TestForm form) {
-			return "regist-review";
+			return "input";
 		}
 		
 		/*--- レビュー登録リクエスト（登録確認画面より） ---*/
@@ -52,7 +51,6 @@ public class FocusTimeApplicationcontroller {
 			//
 			// *** ここで from 内容で DB登録処理を行う ***
 			//
-
 			model.addAttribute("msg", "登録が完了しました。");
 			
 			return "complete";

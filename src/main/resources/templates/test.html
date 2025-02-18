@@ -37,7 +37,7 @@
 	   	<p th:text="*{comment}"></p><br><br>
 	</div>
 	<br>
-	
+	 
 	 <form th:action="@{/test}" method="POST"
 			th:object="${testForm}">
     	 <!-- <input type="hidden" th:field="*{userId}">-->
@@ -48,8 +48,9 @@
     	<input type="hidden" th:field="*{comment}">
     	<input type="submit" value="登録実行" class="btn">
    	</form>
-
-    <form th:action="@{/n}" method="POST"
+   	-->
+   	
+    <form th:action="@{/n-ret}" method="POST"
 			th:object="${testForm}">
     	 <!-- <input type="hidden" th:field="*{userId}">-->
     	<input type="hidden" th:field="*{study}">
@@ -59,7 +60,7 @@
     	<input type="hidden" th:field="*{comment}">
     	<input type="submit" value="もどる" class="btn">
    	</form>
-
+   	
 
 </body>
 </html>
