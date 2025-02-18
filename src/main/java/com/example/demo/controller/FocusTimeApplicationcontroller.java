@@ -21,7 +21,7 @@ public class FocusTimeApplicationcontroller {
 	
 	//入力画面遷移
 		@GetMapping("/input")
-		public String input() {
+		public String shoewReview(@ModelAttribute TestForm form) {
 			return "input";
 		}
 	

@@ -9,26 +9,26 @@
 
 	<h2>内容送信</h2>
 
-    <form th:action="@{/n}" method="POST">
-    	<!--【利用者ID】<br>-->
-    	<!--<input type="text" name="userId"><br>-->
-		<!--<br>-->
+   
+    <form th:action="@{/n}" method="POST" 
+    		th:object="${testForm}">
+		<!--【利用者ID】<br>
+		<input type="text" th:field="*{userId}"><br>
+		<br>-->
     	【勉強日】<br>
-    	<input type="date" name="study"><br>
+    	<input type="date" th:field="*{study}"><br>
 		<br>
-    	【勉強時間】(分で記載)<br>
-		<input type="text" name="studyhours"><br>
+    	【勉強時間（分で表記）】<br>
+		<input type="text" th:field="*{studyhours}"><br>
 		<br>
     	【教科】<br>
-    	<input type="text"  name="subject" class="subject"><br>
-    	<br>
+		<input type="text" th:field="*{subject}"><br>
+		<br>
     	【内容】<br>
-    	<input type="text"  name="comment" class="comment"><br>
-    	
+    	<input type="text" th:field="*{comment}" class="comment" ><br>
 		<br>
     	<input type="submit" value="登録" class="btn">
     </form>
-
 
 </body>
 </html>
