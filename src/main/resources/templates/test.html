@@ -10,19 +10,6 @@
 <body>
 		
 	<h2>習得パラメータ</h2>
-
-
-<!--   	【利用者ID】<br>-->
-<!--   	<p th:text="${TestForm.userId}"></p><br><br>-->
-<!--   	【勉強日】<br>-->
-<!--   	<p th:text="${TestForm.study}"></p><br><br>-->
-<!--   	【勉強時間】(1-5)<br>-->
-<!--   	<p th:text="${TestForm.studyhours}"></p><br><br>-->
-<!--   	【教科】<br>-->
-<!--   	<p th:text="${TestForm.studyhours}"></p><br><br>-->
-<!--   	【内容】<br>-->
-<!--   	<p th:text="${TestForm.comment}"></p><br><br>-->
-
 <!--   	testは小文字-->
 	<div th:object="${testForm}">
 		<!--   	【利用者ID】<br>-->
@@ -43,7 +30,6 @@
     	 <!-- <input type="hidden" th:field="*{userId}">-->
     	<input type="hidden" th:field="*{study}">
     	<input type="hidden" th:field="*{studyhours}">
-    	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{subject}">
     	<input type="hidden" th:field="*{comment}">
     	<input type="submit" value="登録実行" class="btn">
@@ -55,7 +41,6 @@
     	 <!-- <input type="hidden" th:field="*{userId}">-->
     	<input type="hidden" th:field="*{study}">
     	<input type="hidden" th:field="*{studyhours}">
-    	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{subject}">
     	<input type="hidden" th:field="*{comment}">
     	<input type="submit" value="もどる" class="btn">
