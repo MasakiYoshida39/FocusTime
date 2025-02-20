@@ -51,10 +51,9 @@ public class FocusTimeApplicationcontroller {
 				BindingResult result) {
 			
 			if (result.hasErrors()) {
-				return "n";
+				return	"input";
 			}
-				//tostringが呼び出される
-			System.out.println(form);	
+			
 			
 			return "test";
 		}
