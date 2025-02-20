@@ -31,26 +31,32 @@ public class FocusTimeApplicationcontroller {
 		 * 
 		 * @return test.html
 		 */
-		/*--- 内容登録リクエスト（登録画面より） ---*/
-		@PostMapping("/n")
-		public String registReview(@ModelAttribute TestForm form) {
-				//tostringが呼び出される
-			System.out.println(form);	
-			
-			return "test";
-		}
+		
 		
 		/*--- レビュー登録画面表示リクエスト（確認画面からの戻り） ---*/
 		@PostMapping("/n-ret")
 		public String showReviewFormRet(
+				@ModelAttribute TestForm form
+				) {
+			
+			
+			
+			return "input";
+		}
+		
+		/*--- 内容登録リクエスト（登録画面より） ---*/
+		@PostMapping("/n")
+		public String registReview(
 				@Validated @ModelAttribute TestForm form,
 				BindingResult result) {
 			
 			if (result.hasErrors()) {
-				return "n-ret";
+				return "n";
 			}
+				//tostringが呼び出される
+			System.out.println(form);	
 			
-			return "input";
+			return "test";
 		}
 		
 		/*--- レビュー登録リクエスト（登録確認画面より） ---*/
@@ -60,7 +66,7 @@ public class FocusTimeApplicationcontroller {
 				Model model) {
 			
 			if (result.hasErrors()) {
-				return "n-ret";
+				return "n";
 			}
 			//
 			// *** ここで from 内容で DB登録処理を行う ***
