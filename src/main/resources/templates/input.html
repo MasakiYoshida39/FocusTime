@@ -14,18 +14,23 @@
     		th:object="${testForm}">
 		<!--【利用者ID】<br>
 		<input type="text" th:field="*{userId}"><br>
+		<div th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" class="error-msg"></div>
 		<br>-->
     	【勉強日】<br>
     	<input type="date" th:field="*{study}"><br>
+    	<div th:if="${#fields.hasErrors('study')}" th:errors="*{study}" class="error-msg"></div>
 		<br>
     	【勉強時間（分で表記）】<br>
 		<input type="text" th:field="*{studyhours}"><br>
+		<div th:if="${#fields.hasErrors('studyhours')}" th:errors="*{studyhours}" class="error-msg"></div>
 		<br>
     	【教科】<br>
 		<input type="text" th:field="*{subject}"><br>
+		<div th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}" class="error-msg"></div>
 		<br>
     	【内容】<br>
     	<input type="text" th:field="*{comment}" class="comment" ><br>
+    	<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="error-msg"></div>
 		<br>
     	<input type="submit" value="登録" class="btn">
     </form>
