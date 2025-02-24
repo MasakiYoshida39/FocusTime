@@ -3,15 +3,18 @@ package com.example.demo.repository;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.Learning;
+
+import lombok.RequiredArgsConstructor;
+
 @Repository
-public class RegistRepositoryImpl implements RegistRepository {
+@RequiredArgsConstructor
+public class ReviewRepositoryImpl implements ReviewRepository {
+	
 
 	@Override
 	public void add(Learning learning) {
 		// TODO 自動生成されたメソッド・スタブ
-		System.out.println("---登録---");
-		System.out.println(learning);
-
+		
 	}
 
 }
