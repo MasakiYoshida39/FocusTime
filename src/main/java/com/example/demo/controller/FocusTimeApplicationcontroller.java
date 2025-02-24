@@ -60,7 +60,8 @@ public class FocusTimeApplicationcontroller {
 				return "n";
 			}
 			RegistService service = new RegistServiceImpl();
-//テスト用を通す　RegistService service = new RegistServiceMock();
+			//テスト用を通す
+//          RegistService service = new RegistServiceMock();
 			String msg = service.regist();
 			
 			model.addAttribute("msg", msg);
