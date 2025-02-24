@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entity.Learning;
 import com.example.demo.form.TestForm;
 import com.example.demo.service.RegistService;
 
@@ -60,12 +61,15 @@ public class FocusTimeApplicationcontroller {
 			if (result.hasErrors()) {
 				return "n";
 			}
-//			RegistService service = new RegistServiceImpl();
-			//テスト用を通
-//			RegistService service = new RegistServiceMock();
-			String msg = service.regist();
+			Learning l = new Learning();
+//			l.setUserId(form.gettUserId());
+			l.setStudy(form.getStudy());
+			l.setStudyhours(form.getStudyhours());
+			l.setSubject(form.getSubject());
+			l.setComment(form.getComment());
+			service.regist(l);
 			
-			model.addAttribute("msg", msg);
+			model.addAttribute("msg", "レビュー登録が完了しました。");
 			
 			return "complete";
 		}
