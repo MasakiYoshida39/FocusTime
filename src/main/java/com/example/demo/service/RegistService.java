@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Learning;
+
 public interface RegistService {
-	String regist();
+	void regist(Learning learning);
 }
