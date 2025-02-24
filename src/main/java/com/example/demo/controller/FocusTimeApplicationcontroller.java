@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.TestForm;
+import com.example.demo.service.RegistService;
+import com.example.demo.service.RegistServiceImpl;
 /**
  * 
  * @author masaki
@@ -57,10 +59,11 @@ public class FocusTimeApplicationcontroller {
 			if (result.hasErrors()) {
 				return "n";
 			}
-			//
-			// *** ここで from 内容で DB登録処理を行う ***
-			//
-			model.addAttribute("msg", "登録が完了しました。");
+			RegistService service = new RegistServiceImpl();
+//テスト用を通す　RegistService service = new RegistServiceMock();
+			String msg = service.regist();
+			
+			model.addAttribute("msg", msg);
 			
 			return "complete";
 		}
