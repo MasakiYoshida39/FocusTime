@@ -12,5 +12,6 @@ public class Learning {
 	private String subject;
 	private String comment;
 
+	
 
 }
