@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.TestForm;
 import com.example.demo.service.RegistService;
-import com.example.demo.service.RegistServiceImpl;
-/**
- * 
- * @author masaki
- *
- */
+
+import lombok.RequiredArgsConstructor;
+
+
 @Controller
+@RequiredArgsConstructor
 public class FocusTimeApplicationcontroller {
+	
+	private final RegistService service;
 
 	//入力画面遷移
 		@GetMapping("/input")
@@ -59,7 +60,7 @@ public class FocusTimeApplicationcontroller {
 			if (result.hasErrors()) {
 				return "n";
 			}
-			RegistService service = new RegistServiceImpl();
+//			RegistService service = new RegistServiceImpl();
 			//テスト用を通
 //			RegistService service = new RegistServiceMock();
 			String msg = service.regist();
