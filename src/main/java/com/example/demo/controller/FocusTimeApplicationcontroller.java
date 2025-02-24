@@ -16,23 +16,13 @@ import com.example.demo.form.TestForm;
  */
 @Controller
 public class FocusTimeApplicationcontroller {
-	/**
-	 * 
-	 * @return input.html
-	 */
-	
+
 	//入力画面遷移
 		@GetMapping("/input")
 		public String shoewReview(@ModelAttribute TestForm form) {
 			return "input";
 		}
 	
-		/**
-		 * 
-		 * @return test.html
-		 */
-		
-		
 		/*--- レビュー登録画面表示リクエスト（確認画面からの戻り） ---*/
 		@PostMapping("/n-ret")
 		public String showReviewFormRet(
