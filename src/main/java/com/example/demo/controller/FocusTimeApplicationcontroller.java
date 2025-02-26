@@ -1,12 +1,12 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.Learning;
 import com.example.demo.form.TestForm;
@@ -56,7 +56,7 @@ public class FocusTimeApplicationcontroller {
 		@PostMapping("/test")
 		public String confirmRegistReview(TestForm form,
 				BindingResult result,
-				Model model) {
+				RedirectAttributes redirectAttributes) {
 			
 			if (result.hasErrors()) {
 				return "n";
@@ -69,9 +69,9 @@ public class FocusTimeApplicationcontroller {
 			l.setComment(form.getComment());
 			service.regist(l);
 			
-			model.addAttribute("msg", "レビュー登録が完了しました。");
+			redirectAttributes.addFlashAttribute("msg", "(レビュー登録)");
 			
-			return "complete";
+			return "redirect:/complete";
 		}
 	
 
